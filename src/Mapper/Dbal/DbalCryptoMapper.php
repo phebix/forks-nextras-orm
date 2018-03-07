@@ -49,20 +49,6 @@ class DbalCryptoMapper extends DbalMapper
 
 	protected function createStorageReflection()
 	{
-		//
-		//$this->getRepository()->getEntityMetadata()
-		\Tracy\Debugger::barDump('metadata:');
-		\Tracy\Debugger::barDump($this->getRepository()->getEntityMetadata()->getProperties());
-
-		/*
-		 *
-		return new StorageReflection\UnderscoredStorageReflection(
-			$this->connection,
-			$this->getTableName(),
-			$this->getRepository()->getEntityMetadata()->getPrimaryKey(),
-			$this->cache
-		);
-		 */
 
 		$storageReflection = parent::createStorageReflection();
 
