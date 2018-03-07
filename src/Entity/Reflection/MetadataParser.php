@@ -37,6 +37,7 @@ class MetadataParser implements IMetadataParser
 		'default' => 'parseDefault',
 		'primary' => 'parsePrimary',
 		'primary-proxy' => 'parsePrimaryProxy',
+		'encrypted' => 'parseEncrypted',
 	];
 
 	/** @var ReflectionClass */
@@ -439,6 +440,10 @@ class MetadataParser implements IMetadataParser
 		}
 	}
 
+	protected function parseEncrypted(PropertyMetadata $property)
+	{
+		$property->isEncrypted = true;
+	}
 
 	protected function initPrimaryKey()
 	{

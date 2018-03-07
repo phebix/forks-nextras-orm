@@ -37,6 +37,16 @@ class BooksMapper extends Nextras\Orm\Mapper\Mapper
 }
 \--
 
+When you have crypt values, your mapper must extends from Nextras\Orm\Mapper\Dbal\DbalCryptoMapper and must register Nextras\Orm\Mapper\Dbal\ICrypto class in your neon.
+To column name in database is added $sqlPostfix and may be change it in your mapper.
+/--php
+class BooksMapper extends Nextras\Orm\Mapper\Dbal\DbalCryptoMapper
+{
+
+    protected static $sqlPostfix = '_encrypted';
+}
+\--
+
 It is impossible to filter data by "repository" API, you can write your own filtering into own methods in mapper. Dbal mapper allows you to return `Nextras\Dbal\QueryBuilder\QueryBuilder` or `Nextras\Dbal\Result\Result` object. Query builder instance will be injected into DbalCollection, Result instance will be executed and returned rows will be wrapped up in ArrayCollection. DbalCollection is lazy, it is always better to try use dbal's query builder.
 
 You can get new query builder by calling `builder()` method. Instance of current database connection is available in `$connection` property.

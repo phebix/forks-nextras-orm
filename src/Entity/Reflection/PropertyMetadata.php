@@ -46,6 +46,9 @@ class PropertyMetadata
 	/** @var bool */
 	public $isVirtual = false;
 
+	/** @var bool */
+	public $isEncrypted = false;
+
 	/** @var mixed */
 	public $defaultValue;
 

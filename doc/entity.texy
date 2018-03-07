@@ -97,6 +97,7 @@ Each property can be annotated with a modifier. Modifiers are optional and provi
 - `{enum self::TYPE_*}`                      - enables extended validation against values enumeration.
 - `{default now}`                            - defines property default value.
 - `{virtual}`                                - marks property as "do not persist in storage".
+- `{encrypted}`                              - crypt value in database.
 - `{container ContainerClassName}`           - sets property container/injection.
 - `{1:m TargetEntity::$property}`            - see [relationships].
 - `{m:1 TargetEntity::$property}`            - see [relationships].
@@ -180,6 +181,13 @@ class Event extends Nextras\Orm\Entity\Entity
 	const TYPE_PUBLIC = 0;
 }
 \--
+
+--------
+
+{encrypted}
+---------
+Value has been encrypted before store in database. Entity mapper must extend from Nextras\Orm\Mapper\Dbal\DbalCryptoMapper without Nextras\Orm\Mapper\Mapper.
+
 
 --------
 
