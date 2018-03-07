@@ -1,13 +1,13 @@
 {
-	"name": "nextras/orm",
+	"name": "phebix/forks-nextras-orm",
 	"type": "library",
-	"description": "Nextras Orm framework",
+	"description": "Nextras Orm framework + Crypt",
 	"keywords": [
 		"orm",
 		"database",
 		"nextras"
 	],
-	"homepage": "https://github.com/nextras/orm",
+	"homepage": "https://github.com/phebix/forks-nextras-orm",
 	"license": "MIT",
 	"authors": [
 		{
